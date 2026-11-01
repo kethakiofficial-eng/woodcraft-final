@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lakdila Woodcraft | Sri Lankan wood, turned by hand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0b0705;--bark:#2a1a0f;--teak:#9a6538;--gold:#e8a91c;--bone:#efe3cf;--mute:#b9a78d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--bone);font:300 1.05rem/1.7 'Jost',system-ui,sans-serif;overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:20}
+header{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 1.2rem) clamp(1.2rem,4vw,3rem) 1.2rem}
+.brand{font:600 1.35rem 'Cormorant Garamond',serif;letter-spacing:.14em;color:var(--gold);text-decoration:none}
+nav{display:flex;gap:clamp(1rem,3vw,2.4rem)}
+nav a{color:var(--bone);text-decoration:none;font-size:.82rem;letter-spacing:.22em;position:relative;padding:.3rem 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--gold);transition:width .35s}
+nav a:hover::after,nav a:focus-visible::after{width:100%}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+section{position:relative;z-index:1;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:7rem clamp(1.2rem,6vw,6rem) 4rem}
+.copy{max-width:30rem}
+.right{justify-content:flex-end}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:1;margin:0 0 1.4rem;letter-spacing:.01em}
+h1{font-size:clamp(3.2rem,9vw,8rem)}
+h1 em{display:block;font-style:italic;color:var(--gold);font-size:.55em;margin-top:.5rem}
+h2{font-size:clamp(2.4rem,5.5vw,4.6rem)}
+p{color:var(--mute);margin:0 0 1.2rem}
+.hero{align-items:flex-end}
+.hero .copy{max-width:36rem;text-shadow:0 2px 30px #000}
+.rings{position:absolute;left:50%;bottom:1.6rem;translate:-50% 0;font-size:.78rem;letter-spacing:.25em;color:var(--mute);display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.rings i{width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:drip 2.2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.woods{list-style:none;padding:0;margin:1.6rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem}
+.woods li{border:1px solid rgba(232,169,28,.45);color:var(--gold);padding:.35rem 1rem;border-radius:99px;font-size:.9rem}
+.price{font:italic 400 2rem 'Cormorant Garamond',serif;color:var(--gold);margin:0 0 1.4rem}
+.btn{display:inline-block;padding:.95rem 2rem;border:1px solid var(--gold);color:var(--ink);background:var(--gold);text-decoration:none;font-weight:500;letter-spacing:.06em;transition:background .3s,color .3s;margin:0 .6rem .8rem 0}
+.btn.ghost{background:transparent;color:var(--gold)}
+.btn:hover{background:transparent;color:var(--gold)}.btn.ghost:hover{background:var(--gold);color:var(--ink)}
+.contact{justify-content:center;text-align:center;background:linear-gradient(transparent,rgba(11,7,5,.85) 40%)}
+.contact .copy{max-width:38rem}
+.contact address{font-style:normal;color:var(--mute);margin-top:2rem}
+.fade{opacity:0;transform:translateY(28px);transition:opacity 1s,transform 1s}
+.fade.on{opacity:1;transform:none}
+@media(max-width:700px){nav a:nth-child(n+3){display:none}section{align-items:flex-end}.right{justify-content:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}.rings i{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<header>
+  <a class="brand" href="#top">LAKDILA</a>
+  <nav><a href="#bowls">Bowls</a><a href="#spice">Spice cups</a><a href="#betel">Betel tray</a><a href="#order">Order</a></nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="copy">
+    <h1>Every ring<em>a year of Sri Lanka</em></h1>
+    <p>Lakdila Woodcraft turns local teak, mahogany and coconut wood into durable, beautiful things for your home and kitchen. Handmade in Matale.</p>
+  </div>
+  <div class="rings">scroll<i></i></div>
+</section>
+
+<section class="right" id="bowls">
+  <div class="copy fade">
+    <h2>Coconut wood bowls</h2>
+    <p>Reclaimed coconut wood, shaped on the lathe and finished by hand. Strong, chemical-free and made for smoothie bowls, salads and the table you love to set.</p>
+    <p>Hand wash, then oil now and then, and it will outlast the trend.</p>
+    <ul class="woods"><li>Teak</li><li>Mahogany</li><li>Coconut wood</li></ul>
+  </div>
+</section>
+
+<section id="spice">
+  <div class="copy fade">
+    <h2>Wooden spice cup set</h2>
+    <p>Sturdy, moisture-resistant jars with snug lids on a turned wooden tray. Cinnamon, cloves and cardamom, kept close and looking good.</p>
+    <p class="price">LKR 5,550 &middot; free delivery island-wide</p>
+    <a class="btn" href="https://wa.me/94769770289?text=I%20would%20like%20to%20order%20the%20spice%20cup%20set">Order on WhatsApp</a>
+  </div>
+</section>
+
+<section class="right" id="betel">
+  <div class="copy fade">
+    <h2>Teak betel tray</h2>
+    <p>The bulath thattuwa, carved from premium teak with a smooth finish. For weddings, housewarmings, temple offerings and every occasion that deserves a proper welcome.</p>
+    <a class="btn ghost" href="#order">Ask about custom sizes</a>
+  </div>
+</section>
+
+<section class="contact" id="order">
+  <div class="copy fade">
+    <h2>Tell us what to build</h2>
+    <p>Orders are taken directly by call, WhatsApp, Instagram or Facebook. Send a photo or an idea, and we will carve it.</p>
+    <a class="btn" href="https://wa.me/94769770289">WhatsApp 076 977 0289</a>
+    <a class="btn ghost" href="mailto:lakdila102@gmail.com">lakdila102@gmail.com</a>
+    <address>Matale, Sri Lanka<br>Instagram @lakdilawoodcraftsrilanka</address>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+// reveal copy
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.25});
+document.querySelectorAll('.fade').forEach(function(el){io.observe(el)});
+if(!window.THREE)return;
+var cv=document.getElementById('gl'),R;
+try{R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:false})}catch(e){return}
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.setClearColor(0x0b0705);
+var S=new THREE.Scene();S.fog=new THREE.FogExp2(0x0b0705,.045);
+var C=new THREE.PerspectiveCamera(42,1,.1,100);
+
+// procedural textures
+function rnd(a,b){return a+Math.random()*(b-a)}
+function ringTex(){
+  var c=document.createElement('canvas');c.width=c.height=1024;var g=c.getContext('2d');
+  g.fillStyle='#7a4a26';g.fillRect(0,0,1024,1024);
+  var cx=500,cy=530,n=0;
+  for(var r=480;r>4;r-=rnd(5,13)){
+    g.beginPath();
+    for(var a=0;a<=64;a++){var t=a/64*Math.PI*2;var w=1+.07*Math.sin(t*2+r*.02)+.04*Math.sin(t*5+r*.05)+.015*Math.sin(t*13+r);
+      var x=cx+Math.cos(t)*r*w,y=cy+Math.sin(t)*r*w;a?g.lineTo(x,y):g.moveTo(x,y)}
+    g.closePath();g.fillStyle='hsl('+rnd(24,31)+','+rnd(45,60)+'%,'+(n++%2?rnd(22,30):rnd(32,42))+'%)';g.fill();
+    g.strokeStyle='rgba(30,14,5,.55)';g.lineWidth=rnd(.6,2.2);g.stroke();
+  }
+  g.strokeStyle='rgba(15,6,2,.8)';
+  for(var i=0;i<7;i++){var t=rnd(0,6.28),l=rnd(180,470);g.lineWidth=rnd(1,3.5);g.beginPath();g.moveTo(cx,cy);
+    var px=cx,py=cy;for(var k=0;k<14;k++){px+=Math.cos(t)*l/14+rnd(-6,6);py+=Math.sin(t)*l/14+rnd(-6,6);g.lineTo(px,py)}g.stroke()}
+  var tx=new THREE.CanvasTexture(c);tx.anisotropy=8;return tx;
+}
+function grainTex(h,s,l){
+  var c=document.createElement('canvas');c.width=256;c.height=512;var g=c.getContext('2d');
+  g.fillStyle='hsl('+h+','+s+'%,'+l+'%)';g.fillRect(0,0,256,512);
+  for(var i=0;i<260;i++){g.strokeStyle='hsla('+h+','+s+'%,'+rnd(l-14,l+10)+'%,'+rnd(.15,.5)+')';g.lineWidth=rnd(.5,3);
+    var x=rnd(0,256);g.beginPath();g.moveTo(x,0);g.bezierCurveTo(x+rnd(-18,18),170,x+rnd(-18,18),340,x+rnd(-10,10),512);g.stroke()}
+  var t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(3,1);return t;
+}
+function mat(h,s,l,rough){return new THREE.MeshStandardMaterial({map:grainTex(h,s,l),roughness:rough||.55,metalness:.05,side:THREE.DoubleSide})}
+function lathe(pts,m){return new THREE.Mesh(new THREE.LatheGeometry(pts.map(function(p){return new THREE.Vector2(p[0],p[1])}),72),m)}
+
+var STEP=9,objs=[];
+function place(o,i,tilt){var g=new THREE.Group();g.add(o);var gl=new THREE.Mesh(new THREE.CircleGeometry(4.6,64),new THREE.MeshBasicMaterial({color:0xe8a91c,transparent:true,opacity:.07,depthWrite:false}));gl.position.z=-2.5;g.add(gl);g.position.y=-i*STEP;g.rotation.x=tilt;S.add(g);objs.push(g);return g}
+
+// 1 log slice
+var logM=new THREE.Mesh(new THREE.CylinderGeometry(2.6,2.6,.7,96),[mat(25,40,22),new THREE.MeshStandardMaterial({map:ringTex(),roughness:.7}),new THREE.MeshStandardMaterial({map:ringTex(),roughness:.8})]);
+logM.rotation.x=Math.PI/2;var logP=new THREE.Group();logP.add(logM);var logG=place(logP,0,0);logG.position.x=1.6;
+
+// 2 coconut bowl
+var bowl=lathe([[0,0],[.7,0],[1.3,.25],[1.85,.85],[2.1,1.5],[2.0,1.55],[1.7,1.0],[1.15,.55],[0,.42]],mat(18,45,15,.35));
+bowl.position.y=-.9;var bowlG=place(bowl,1,.5);bowlG.position.x=-1.8;
+
+// 3 spice cups on tray
+var cupM=mat(22,48,20,.5),spice=new THREE.Group();
+var tray=lathe([[0,0],[2.6,0],[2.75,.12],[2.75,.2],[0,.2]],mat(24,40,26,.5));spice.add(tray);
+for(var i=0;i<5;i++){var a=i/5*6.283,cup=new THREE.Group();
+  var body=new THREE.Mesh(new THREE.CylinderGeometry(.55,.58,1.2,40),cupM);body.position.set(0,.8,0);cup.add(body);
+  var lid=new THREE.Mesh(new THREE.CylinderGeometry(.6,.6,.16,40),cupM);lid.position.set(0,1.48,0);cup.add(lid);
+  cup.position.set(Math.cos(a)*1.55,0,Math.sin(a)*1.55);spice.add(cup)}
+spice.position.y=-1;var spiceG=place(spice,2,.55);spiceG.position.x=1.8;
+
+// 4 betel pedestal tray
+var ped=lathe([[0,0],[1.1,0],[1.12,.1],[.45,.3],[.2,.7],[.34,1.1],[.16,1.6],[.2,2.3],[.38,2.7],[1.9,2.85],[1.95,3.05],[1.8,3.1],[0,3.0]],mat(20,52,18,.4));
+ped.position.y=-1.6;var pedG=place(ped,3,.25);pedG.position.x=-1.8;
+
+// lights
+S.add(new THREE.AmbientLight(0xffe2b0,.35));
+var key=new THREE.PointLight(0xffb347,2.2,40);S.add(key);
+var rim=new THREE.DirectionalLight(0x7a9cff,.25);rim.position.set(-5,4,-4);S.add(rim);
+
+// dust
+var N=700,pos=new Float32Array(N*3);
+for(var i=0;i<N;i++){pos[i*3]=rnd(-9,9);pos[i*3+1]=rnd(-34,4);pos[i*3+2]=rnd(-8,4)}
+var dg=new THREE.BufferGeometry();dg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+var dust=new THREE.Points(dg,new THREE.PointsMaterial({color:0xe8a91c,size:.045,transparent:true,opacity:.6,depthWrite:false}));S.add(dust);
+
+var mx=0,my=0,sy=0,ty=0,last=0,vel=0;
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+function size(){R.setSize(innerWidth,innerHeight,false);C.aspect=innerWidth/innerHeight;C.updateProjectionMatrix();
+  var m=innerWidth<700;objs.forEach(function(o,i){o.userData.s=m?.62:1;o.scale.setScalar(o.userData.s);if(m)o.position.x=0;});
+  if(!m){logG.position.x=1.6;bowlG.position.x=-1.8;spiceG.position.x=1.8;pedG.position.x=-1.8}}
+addEventListener('resize',size);size();
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+function frame(t){
+  requestAnimationFrame(frame);
+  var vh=innerHeight,p=Math.min(scrollY/vh,3.6);ty=-p*STEP;
+  sy+=(ty-sy)*.07;vel+=((ty-sy)-vel)*.1;
+  C.position.set(mx*1.2,sy+my*-.8,9.5);C.lookAt(0,sy-.2,0);
+  key.position.set(mx*10,sy+3-my*6,6);
+  var k=t*.001*(reduce?0:1);
+  logP.rotation.z=k*.18+vel*.25;
+  bowl.rotation.y=k*.35-vel*.3;
+  spice.rotation.y=-k*.3+vel*.3;
+  ped.rotation.y=k*.3+vel*.3;
+  objs.forEach(function(o,i){o.position.y=-i*STEP+Math.sin(k+i)*.18;o.rotation.z=Math.sin(k*.5+i)*.04;o.rotation.y+=(mx*.6-o.rotation.y)*.05});
+  dust.rotation.y=k*.02;dust.position.y=(k*.15)%2;
+  R.render(S,C);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
